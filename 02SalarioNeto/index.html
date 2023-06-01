@@ -11,7 +11,7 @@
 <body onload="calcularSalarioNeto()">
   <div class="container text-center">
     <div class="display-2">Salario Neto</div>
-<table class="table table-success">
+<table class="table table-primary">
 <tr>
   <td>Puesto</td>
   <td>Horas</td>
@@ -47,8 +47,8 @@
 </table>
 <table class="table table-dark table-hover">
   <tr>
-    <td colspan="2"><h2>PERCEPCIONES</h2></td>
-    <td colspan="2"><h2>DEDUCCIONES</h2></td>
+    <td colspan="2" class="bg-primary "><h2>PERCEPCIONES</h2></td>
+    <td colspan="2" class="bg-primary"><h2>DEDUCCIONES</h2></td>
   </tr>
   <tr>
     <td>Sueldo Base</td>
@@ -77,22 +77,29 @@
   <tr>
     <td>Estimulos</td>
     <td><span id="estimulo"></span></td>
+    <td>Capitalización individual</td>
+    <td><span id="capI"></span></td>
+  </tr>
+  <tr>
+    <td>Horas Extras</td>
+    <td><span id="extra"></span></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td><h4>TOTAL PERCEPCIONES</h4></td>
-    <td><span id="totalPercepciones"></span></td>
-    <td><h4>TOTAL DEDUCCIONES</h4></td>
-    <td><span id="totalDeducciones"></span></td>
+    <td class="bg-primary "><h4>TOTAL PERCEPCIONES</h4></td>
+    <td class=""><span id="totalPercepciones"></span></td>
+    <td class="bg-primary"><h4>TOTAL DEDUCCIONES</h4></td>
+    <td class=""><span id="totalDeducciones"></span></td>
   </tr>
   <tr>
-    <td colspan="2"><h4>SALARIO NETO</h4></td>
-    <td colspan="2"><span id="salarioNeto"></span></td>
+    <td colspan="2"class="bg-primary"><h4>SALARIO NETO</h4></td>
+    <td colspan="2" class=""><span id="salarioNeto"></span></td>
   </tr>
 </table>
-
-<button id="borrar" class="btn btn-danger">Borrar</button>
+<div class="card ">
+<button id="borrar" class="btn btn-dark ">Borrar</button>
+</div>
   </div>
   
     <script src="/estilo/sweetalert2.all.min.js"></script>

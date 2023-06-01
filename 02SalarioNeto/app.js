@@ -9,27 +9,35 @@ function calcularSalarioNeto(){
         case 3:sueldoHora=100;break;
     }
     let sueldoBase=sueldoHora*horas;
-    let canastaBasica=parseFloat(sueldoBase*0.025);
+    let canastaBasica=parseFloat(sueldoBase*0.045);
     let apoyo=parseFloat(sueldoBase*0.05);
-    let antiguedad=parseFloat(anios*150);
+    let antiguedad=parseFloat(anios*200);
     let estimulo=parseFloat(sueldoBase*0.02);
-    let totalPercepciones=parseFloat(sueldoBase+canastaBasica+apoyo+antiguedad+estimulo);
-    let ISR=parseFloat(sueldoBase*0.15);
-    let servicioSalud=parseFloat(sueldoBase*0.035);
-    let AFORE=parseFloat(sueldoBase*0.04);
+    let hextras=horas;
+    if (hextras>40){
+      hextras=(horas-40)*3*sueldoHora;
+    }
+    let totalPercepciones=parseFloat(sueldoBase+canastaBasica+apoyo+antiguedad+estimulo+hextras);
+    let ISR=parseFloat(sueldoBase*0.16);
+    let servicioSalud=parseFloat(sueldoBase*0.0465);
+    let AFORE=parseFloat(sueldoBase*0.061);
     let sindicato=parseFloat(sueldoBase*0.01);
-    let totalDeducciones=parseFloat(ISR+servicioSalud+AFORE+sindicato);
+    let capI=parseFloat(sueldoBase*0.014);
+    let totalDeducciones=parseFloat(ISR+servicioSalud+AFORE+sindicato+capI);
     let salarioNeto=parseFloat(totalPercepciones-totalDeducciones);
+    
     document.getElementById("sueldoBase").innerHTML="<h3>$"+sueldoBase.toFixed(2)+"</h3>";
     document.getElementById("apoyo").innerHTML="<h3>$"+apoyo.toFixed(2)+"</h3>";
     document.getElementById("canastaBasica").innerHTML="<h3>$"+canastaBasica.toFixed(2)+"</h3>";
     document.getElementById("antiguedad").innerHTML="<h3>$"+antiguedad.toFixed(2)+"</h3>";
     document.getElementById("estimulo").innerHTML="<h3>$"+estimulo.toFixed(2)+"</h3>";
+    document.getElementById("extra").innerHTML="<h3>$"+hextras.toFixed(2)+"</h3>";
     document.getElementById("totalPercepciones").innerHTML="<h3>$"+totalPercepciones.toFixed(2)+"</h3>";
     document.getElementById("ISR").innerHTML="<h3>$"+ISR.toFixed(2)+"</h3>";
     document.getElementById("servicioSalud").innerHTML="<h3>$"+servicioSalud.toFixed(2)+"</h3>";
     document.getElementById("AFORE").innerHTML="<h3>$"+AFORE.toFixed(2)+"</h3>";
     document.getElementById("sindicato").innerHTML="<h3>$"+sindicato.toFixed(2)+"</h3>";
+document.getElementById("capI").innerHTML="<h3>$"+capI.toFixed(2)+"</h3>";
     document.getElementById("totalDeducciones").innerHTML="<h3>$"+totalDeducciones.toFixed(2)+"</h3>";
     document.getElementById("salarioNeto").innerHTML="<h3>$"+salarioNeto.toFixed(2)+"</h3>";
 
@@ -46,9 +54,9 @@ btnBorrar.onclick=()=>{
             cancelButtonColor: '#d33',
             confirmButtonText: '¡Sí, bórralo!'
           }).then((result) => {
-            document.getElementById("puesto").value;
-            document.getElementById("horas").value;
-            document.getElementById("anios").value;
+            document.getElementById("puesto").value=0;
+            document.getElementById("horas").value=0 ;
+            document.getElementById("anios").value=0;
             document.getElementById("sueldoBase").innerHTML="<h3>$0.00</h3>";
     document.getElementById("apoyo").innerHTML="<h3>$0.00</h3>";
     document.getElementById("canastaBasica").innerHTML="<h3>$0.00</h3>";
@@ -61,6 +69,8 @@ btnBorrar.onclick=()=>{
     document.getElementById("sindicato").innerHTML="<h3>$0.00</h3>";
     document.getElementById("totalDeducciones").innerHTML="<h3>$0.00</h3>";
     document.getElementById("salarioNeto").innerHTML="<h3>$0.00</h3>";
+    document.getElementById("extra").innerHTML="<h3>$0.00</h3>";
+    document.getElementById("capI").innerHTML="<h3>$0.00</h3>";
             if (result.isConfirmed) {
               Swal.fire(
                 '¡Eliminado!',
