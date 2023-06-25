@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/estilo/bootstrap.min.css">
+  <title>Registro de Productos</title>
+</head>
+
+<body onload="mostrarProductos()">
+  <div class="container-fluid text-center m-auto p-2 ">
+    <h1 class="bg-danger text-white ">REGISTRO DE PRODUCTOS</h1> <hr>
+            <a href="producto.html" class="btn btn-primary w-25">Producto</a>
+  <a  href="categoria.html" class="btn btn-primary w-25 " >Categoría</a>
+    
+    <button class="btn btn-primary "data-bs-toggle="modal" data-bs-target ="#addModalProducto">Agregar Producto</button>
+    
+    <div  class="card w-100 bg-danger mt-2 text-white "id="listaProductos">
+        <p>Van aquí los Productos </p>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="addModalProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formAdd" >
+               <h2>Nombre</h2>
+      <input type="text" id="nombre" class="form-control m-1" placeholder="Nombre producto">
+      <h2>Precio</h2>
+      <input type="text" id="precio" class="form-control m-1" placeholder="Precio">
+      <h2>Stock</h2>
+      <input type="text" id="stock" class="form-control m-1" placeholder="Stock">
+      <h2>Categoria</h2>
+      <select value="categoria" id="categoria">
+      
+      </select>
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar </button>
+          <button type="button" class="btn btn-success" id="agregar">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="/estilo/bootstrap.min.js "></script>
+<script src="/estilo/sweetalert2.all.min.js"></script>
+<script src="appP.js"></script>
+</body>
+
+</html>

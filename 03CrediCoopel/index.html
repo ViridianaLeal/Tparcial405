@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilo/bootstrap.min.css">
+    <title>CREDICOOPEL</title>
+</head>
+<body onload="calcular() " class="text-center">
+    
+    <img class="w-50 "src="img/coopel.jpg" alt="">
+    <h1 class="bg-warning m-5">CREDICOOPEL</h1>
+    <div class="card m-5">
+    <h1 class=" bg-dark text-white ">Producto:</h1>
+    <select class="form-control "name="producto" onchange="calcular()" id="producto">
+        <option value="tv" >TV</option>
+        <option value="comedor" >COMEDOR</option>
+        <option value="lavadora" >LAVADORA</option>
+        <option value="moto">MOTO</option>
+        <option value="sala" >SALA</option>
+    </select>
+    <div id="img"></div>
+    <div class="bg-dark text-white h1 "id="precio">Precio C: $ 0.00 MXN</div>
+    
+    <h1 class="bg-success">Cantidad</h1>
+    <input class="form-control "type="range" id="cantidad" value="0" min="1" max="5">
+    <label class="h2 "id="vcan">1</label>
+    <div class="bg-dark text-white h1 "id="precioC">Precio Contado: $ 0.00 MXN</div>
+    
+    <div class="m-2 ">
+    <input type="radio" name="m" id="m6" class="form-check-input p-2 " onchange="calcular()" checked="checked">6 meses
+    <input type="radio" name="m" id="m12" class="form-check-input" onchange="calcular()" >12 meses
+    <input type="radio" name="m" id="m18" class="form-check-input" onchange="calcular()" >18 meses
+    
+    </div>
+        <div class="bg-dark text-white h2 "id="credito">Precio Crédito: $ 0.00 MXN</div>
+   </div>
+    <script src="/estilo/bootstrap.min.js"></script>
+    <script src="/estilo/sweetalert2.all.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/estilo/bootstrap.min.css">
+  <title>Registro de autos</title>
+</head>
+
+<body onload="mostrarAutos()">
+  <div class="container-fluid text-center m-auto p-2 ">
+    <h1 class="bg-danger text-white ">REGISTRO DE AUTOS</h1> <hr>
+    <button class="btn btn-success "data-bs-toggle="modal" data-bs-target ="#addModalAuto">Agregar Auto</button>
+    
+    <div  class="card w-100 bg-danger mt-2 text-white "id="listaAutos">
+        <p>Van aquí los autos</p>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="addModalAuto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Auto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formAdd" >
+               <h2>Marca</h2>
+      <input type="text" id="marca" class="form-control m-1" placeholder="Marca">
+      <h2>Modelo</h2>
+      <input type="text" id="modelo" class="form-control m-1" placeholder="Modelo">
+      <h2>Año</h2>
+      <input type="text" id="ano" class="form-control m-1" placeholder=Año>
+      <h2>Color</h2>
+      <input type="text" id="color" class="form-control m-1" placeholder="Color">
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar </button>
+          <button type="button" class="btn btn-success" id="agregar">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="/estilo/bootstrap.min.js "></script>
+<script src="/estilo/sweetalert2.all.min.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>

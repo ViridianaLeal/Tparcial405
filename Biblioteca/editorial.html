@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/estilo/bootstrap.min.css">
+  <title>Editorial</title>
+</head>
+
+<body onload="mostrarEditoriales()">
+  <div class="container-fluid text-center m-auto p-2 ">
+    <h1 class="bg-warning text-white ">REGISTRO EDITORIAL</h1> <hr>
+        <a href="libro.html" class="btn btn-primary w-25">Libro</a>
+  <a  href="editorial.html" class="btn btn-primary w-25 " >Editorial</a>
+    <button class="btn btn-primary "data-bs-toggle="modal" data-bs-target ="#addModalEditorial">Agregar Editorial</button>
+    
+    <div  class="card w-100 bg-warning mt-2 text-white "id="listaEditoriales">
+        <p>Van aquí las editoriales</p>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="addModalEditorial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Editorial</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formAdd" >
+               <h2> Nombre de la Editorial </h2>
+      <input type="text" id="nombre" class="form-control m-1" placeholder="Nombre de Editorial">
+
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar </button>
+          <button type="button" class="btn btn-success" id="agregar">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="/estilo/bootstrap.min.js "></script>
+<script src="/estilo/sweetalert2.all.min.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>

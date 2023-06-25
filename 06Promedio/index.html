@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/estilo/bootstrap.min.css">
+  <title>Promedio</title>
+</head>
+
+<body onload="calcular()"class="text-center">
+  <h1 class="bg-dark text-white m-3 ">Promedio de calificaciones</h1>
+  <div class="container-center m-2 ">
+    
+  
+ <div class="card w-50 m-auto mb-2 overflow-hidden">
+ <h2 class="bg-warning text-white ">Inglés</h2>
+ <input type="range" class="form-control" id="i" min="5" max="10">
+  <span class="h1" id="vi">0</span>
+      </div>
+      
+      
+<div class="card w-50 m-auto mb-2 overflow-hidden ">
+ <h2 class="bg-success text-white ">Ecología</h2>
+ <input type="range" class="form-control" id="e" min="5" max="10">
+  <span class="h1" id="ve">0</span>
+      </div>
+      
+      
+      <div class="card w-50 m-auto mb-2 overflow-hidden ">
+ <h2 class="bg-danger text-white ">Cálculo Diferencial</h2>
+ <input type="range" class="form-control" id="c" min="5" max="10">
+  <span class="h1" id="vc">0</span>
+      </div>
+      
+      
+      <div class="card w-50 m-auto mb-2 overflow-hidden ">
+ <h2 class="bg-primary text-white ">Física</h2>
+ <input type="range" class="form-control" id="f" min="5" max="10">
+  <span class="h1" id="vf">0</span>
+      </div>
+      
+      
+      <div class="card w-50 m-auto mb-2 overflow-hidden ">
+ <h2 class="bg-secondary text-white ">Módulo</h2>
+ <input type="range" class="form-control" id="m" min="5" max="10">
+  <span class="h1" id="vm">0</span>
+      </div>
+      
+      
+  <div class=" card overflow-hidden text-white  w-50 m-auto " id="res"></div>
+  
+  
+   <script src="/estilo/sweetalert2.all.min.js"></script>
+    <script src="app.js"></script>
+    <script src="/estilo/bootstrap.min.js"></script>
+</body>
+
+</html>
